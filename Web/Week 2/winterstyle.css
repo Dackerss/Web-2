@@ -1,0 +1,36 @@
+body{
+	
+}
+
+
+
+fieldset {
+   display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+	
+
+    border: 10px groove (internal value);
+}
+
+div
+{
+	
+	text-align:left;
+	
+    background-repeat: no-repeat;
+	
+    background-size: 100% 100%;
+	
+}
+
+div.box
+{
+	
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:50px; /* this is half the height of your div*/  
+  margin-left:-100px; /*this is half of width of your div*/
+	
+}
