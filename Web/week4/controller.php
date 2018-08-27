@@ -34,7 +34,7 @@ if (isset($_POST['order']))
 			
 
 	}
-	echo("the Price is $price");
+	
 	
 }
 
