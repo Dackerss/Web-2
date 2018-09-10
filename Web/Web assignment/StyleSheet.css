@@ -1,0 +1,81 @@
+
+
+table, th, td {
+  table-layout: fixed;
+  max-width: 1000px;
+  width: 80%;
+margin: 0 auto;
+text-align: center;
+
+  }
+  
+.headerdiv
+{
+	
+   
+    padding: 10px; 
+    width: 1000px;
+    height: 150px; 
+	margin: 0 auto;
+	text-align: center;
+	background-image: url("Footer.jpg");
+}
+
+	  
+   
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  .bodydiv
+{
+	
+	
+	margin: 0 auto;
+	text-align: center;
+	
+	
+}
+    .tablediv
+{
+	
+	 width: 80%;
+	margin: 0 auto;
+	text-align: center;
+    background: white;
+}
+
+
+tbody tr:nth-child(odd) {
+   background-color: #61AD6C
+}
+
+tbody tr:nth-child(even) {
+   background-color: #BCD14A
+}
+
+tbody tr:first-child{
+   background-color:#ffd11a;
+}
+
+.footerdiv
+{
+	
+	
+    padding: 10px; 
+    width: 1000px;
+    height: 150px; 
+	margin: 0 auto;
+	text-align: center;
+	background-image: url("Footer.jpg");
+}
+
+
+
+
+ 
+  
+ 
