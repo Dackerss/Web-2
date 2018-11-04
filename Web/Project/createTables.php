@@ -271,12 +271,12 @@ try
 			$stmt->execute();
 		}
 		
-		fclose($file
+		fclose($file);
 		
 		
 		
 		
-			$insertQuery ="INSERT into completion(studentID, labID, responseTime) VALUES(:studentID,:labID)";
+			$insertQuery ="INSERT into completion(studentID, labID) VALUES(:studentID,:labID)";
 	$stmt =$pdo->prepare($insertQuery);
 	$stmt->bindParam(':studentID',$studentID);
 	$stmt->bindParam(':labID',$labID);
@@ -297,7 +297,34 @@ try
 		fclose($file);
 			
 			
+		
+		
 			
+		
+			
+						$insertQuery ="INSERT into data(toolID, studentID, labID, xValue, yValue) VALUES(:toolID,:studentID,:labID,:xValue,:yValue)";
+	$stmt =$pdo->prepare($insertQuery);
+	$stmt->bindParam(':toolID',$toolID);
+	$stmt->bindParam(':studentID',$studentID);
+	$stmt->bindParam(':labID',$labID);
+	$stmt->bindParam(':xValue',$xValue);
+	$stmt->bindParam(':yValue',$yValue);	
+		
+	
+		$file = fopen("data.csv","r");
+		
+		while(!feof($file))
+		{
+			$myArray=fgetcsv($file);
+			$toolID=$myArray[0];
+			$studentID=$myArray[1];
+			$labID=$myArray[2];
+			$xValue=$myArray[3];
+			$yValue=$studentNumber;
+			$stmt->execute();
+		}
+		
+		fclose($file);
 
 
 }
