@@ -5,18 +5,34 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
    <link rel="stylesheet" type="text/css" href="StyleSheet.css">  
+   
+      <div class="w3-container w3-black">
+            <!--Lab Checkpoint Tool-->
+            <h1>Checkpoint tool</h1>
+        </div>
     </head>
     <body>
 
- <div class= "headerdiv">
-				<h1>Athlete Data Base</h1>
-			</div>	 
-  <a href="landingController.php" class="w3-bar-item w3-button w3-mobile">Home Page</a>
-  <a href="searchController.php" class="w3-bar-item w3-button w3-mobile">Search Athlete</a>
-  <a href="addCountryController.php" class="w3-bar-item w3-button w3-mobile">Add Country</a>
-  <a href="addAthleteController.php" class="w3-bar-item w3-button w3-mobile">Add Athlete</a>
-  <a href="modifyController.html.php" class="w3-bar-item w3-button w3-mobile">Modify Athlete</a>
-  
+
+				
+				 
+
+			
+	
+  <div class="w3-container w3-display-middle">
+  		<div class="w3-table w3-centered  w3-light-grey">
+		<table>
+		<tr>
+		<th>Mark Checkpoint</th><th>Login</th><th>Admin Login </th>
+		</tr>
+		<tr>
+		<td><a href="checkpointContoller.php"><img src="checkpoint.png" class="w3-bar-item w3-button" ></a></td><td><a href="studentContoller.php"><img src="student.png" class="w3-bar-item w3-button"></a></td><td><a href="adminContoller.php"><img src="admin.png" class="w3-bar-item w3-button" ></a></td>
+		</tr>
+		</table>
+	
+			
+</div>
+</div>
   
 
 

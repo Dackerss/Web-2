@@ -223,6 +223,11 @@ try
 			$userName=$myArray[2];
 			$password=$myArray[3];
 			$adminPassword=$myArray[4];
+			$cost = 10;
+			$salt = strtr(base64_encode(random_bytes(16)), '+', '.');
+			$salt = sprintf("$2a$%02d$", $cost) . $salt;
+			$hash = crypt($adminPassword, $salt);
+			$adminPassword = $hash;
 			$stmt->execute();
 		}
 		
@@ -268,6 +273,11 @@ try
 			$lastName=$myArray[2];
 			$userName=$myArray[3];
 			$password=$studentNumber;
+			$cost = 10;
+			$salt = strtr(base64_encode(random_bytes(16)), '+', '.');
+			$salt = sprintf("$2a$%02d$", $cost) . $salt;
+			$hash = crypt($password, $salt);
+			$password = $hash;
 			$stmt->execute();
 		}
 		
