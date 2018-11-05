@@ -35,7 +35,8 @@ try{
 			firstName 	VARCHAR(10),
 			lastName 	VARCHAR(100),
 			userName 	VARCHAR(100),
-            password 	VARCHAR(100),			
+            password 	VARCHAR(100),
+			hasLoggedIn        TINYINT(1) NOT NULL DEFAULT '0',
             PRIMARY KEY(studentID)
         )";
         $pdo->exec($createQuery);
@@ -228,6 +229,11 @@ try
 			$salt = sprintf("$2a$%02d$", $cost) . $salt;
 			$hash = crypt($adminPassword, $salt);
 			$adminPassword = $hash;
+			$cost = 10;
+			$salt = strtr(base64_encode(random_bytes(16)), '+', '.');
+			$salt = sprintf("$2a$%02d$", $cost) . $salt;
+			$hash = crypt($password, $salt);
+			$password = $hash;
 			$stmt->execute();
 		}
 		
@@ -254,13 +260,14 @@ try
 		fclose($file);
 		
 
-			$insertQuery ="INSERT into students(studentNumber, firstName, lastName, userName, password) VALUES(:studentNumber,:firstName,:lastName,:userName,:password)";
+			$insertQuery ="INSERT into students(studentNumber, firstName, lastName, userName, password, hasLoggedIn) VALUES(:studentNumber,:firstName,:lastName,:userName,:password,:hasLoggedIn)";
 	$stmt =$pdo->prepare($insertQuery);
 	$stmt->bindParam(':studentNumber',$studentNumber);
 	$stmt->bindParam(':firstName',$firstName);
 	$stmt->bindParam(':lastName',$lastName);
 	$stmt->bindParam(':userName',$userName);
-	$stmt->bindParam(':password',$password);	
+	$stmt->bindParam(':password',$password);
+	$stmt->bindParam(':hasLoggedIn',$hasLoggedIn);
 		
 	
 		$file = fopen("students.csv","r");
@@ -278,6 +285,7 @@ try
 			$salt = sprintf("$2a$%02d$", $cost) . $salt;
 			$hash = crypt($password, $salt);
 			$password = $hash;
+			$hasLoggedIn=$myArray[4];
 			$stmt->execute();
 		}
 		

@@ -1,7 +1,8 @@
 <?php
 
-
 include 'connect.php';
+
+
 try
 {
     $pdo = new pdo("mysql:host=$host;dbname=$database", $userMS, $passwordMS);
@@ -17,12 +18,10 @@ catch (PDOException $e)
 
 try
 {
- $selectString = "SELECT userName from students";
+  $selectString = "SELECT userName from students";
     $resultUserName = $pdo->query($selectString);
-	 
-	 $selectString = "SELECT labname,isCheckpoint from lab Where isCheckpoint = 1 ";
-    $resultLab = $pdo->query($selectString);
 
+	
 }
 catch (PDOException $e)
 {
@@ -31,30 +30,45 @@ catch (PDOException $e)
     exit();
 }
 
-			
+
 		
 if (isset($_POST['confirm']))
 {
 
 	
-
+$userName = ($_POST['student']);
 $Password = strip_tags ($_POST['pword']);
 
 try{
-$selectString = "SELECT * FROM admin";
+
+$selectString = "SELECT * FROM students WHERE (userName=:userName)";
    $result = $pdo->prepare($selectString);
+   $result->bindvalue(':userName',$userName);
    $result->execute();
    
    $row=$result->fetch();
    $count=$result->rowCount();
    
-	
-		if ( crypt($Password, $row['password']) === $row['password'] )
+	if($count==0)
 		{
 	   
-			include 'toolController.php';
+			$result= 'Not a user';
 	   
 		}
+		elseif ( crypt($Password, $row['password']) === $row['password'] )
+		{
+			if ($row['hasLoggedIn'] == 1)
+			{
+				include 'checkpoint.html.php';
+			}
+			else 
+			{
+				include 'passChangeController.php';
+			}
+		
+	   
+		}
+		
 		elseif ( crypt($Password, $row['password']) != $row['password'] )
 		{
 	     print '<script type="text/javascript">'; 
@@ -71,18 +85,13 @@ catch (PDOException $e)
 }
 }
 
+else{
+	include 'studentLogin.html.php';
+}
 
 
-
-
-
-		
-    else{
-     include 'checkpoint.html.php';
-	}
 	
 	
-
 
 			
 ?>

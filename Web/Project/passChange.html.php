@@ -17,7 +17,7 @@ echo "<form action = '$self' method='POST'>";
 <table class="w3-table ">
 
 <tr><th>Student:</th>
-<td><select name="dynamic_data">
+<td><select name="student">
 <?php
 
  foreach($resultUserName as $row ) {
@@ -29,25 +29,10 @@ echo "<form action = '$self' method='POST'>";
 </select>
 </td>
 </tr>
-<tr><th>Lab</th>
-<td><select name="dynamic_data">
-<?php
-
- foreach($resultLab as $row ) {
-
- echo "<option value=\"$row[labname]\"> $row[labname] </option>";
-
-}
-?>
-</select>
-</td>
-</tr>
-<tr><th>Tutor Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
+<tr><th>Old Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
+<tr><th>New Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
 
 
 
 <tr><th></th><td><input type='submit' name = 'confirm'  value='confirm'></td></tr>
 </table>
-
-
-

@@ -26,7 +26,7 @@
 		<th>Mark Checkpoint</th><th>Login</th><th>Admin Login </th>
 		</tr>
 		<tr>
-		<td><a href="checkpointContoller.php"><img src="checkpoint.png" class="w3-bar-item w3-button" ></a></td><td><a href="studentLoginController.php"><img src="student.png" class="w3-bar-item w3-button"></a></td><td><a href="adminContoller.php"><img src="admin.png" class="w3-bar-item w3-button" ></a></td>
+		<td><a href="checkpointContoller.php"><img src="checkpoint.png" class="w3-bar-item w3-button" ></a></td><td><a href="studentContoller.php"><img src="student.png" class="w3-bar-item w3-button"></a></td><td><a href="adminContoller.php"><img src="admin.png" class="w3-bar-item w3-button" ></a></td>
 		</tr>
 		</table>
 	
