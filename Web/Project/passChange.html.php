@@ -15,24 +15,14 @@ echo "<form action = '$self' method='POST'>";
         </div>
     </head>
 <table class="w3-table ">
-
-<tr><th>Student:</th>
-<td><select name="student">
 <?php
-
- foreach($resultUserName as $row ) {
-
- echo "<option value=\"$row[userName]\"> $row[userName] </option>";
-
-}
+echo ("<tr><th>$userName</th>")
 ?>
-</select>
-</td>
 </tr>
-<tr><th>Old Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
-<tr><th>New Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
+<tr><th>Old Password</th><td> <input type="password" placeholder="Password" name="oldpword"required ></td></tr>
+<tr><th>New Password</th><td> <input type="password" placeholder="Password" name="newpword"required ></td></tr>
 
 
 
-<tr><th></th><td><input type='submit' name = 'confirm'  value='confirm'></td></tr>
+<tr><th></th><td><input type='submit' name = 'a'  value='a'></td></tr>
 </table>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'connect.php';
 
 
@@ -49,20 +49,22 @@ $selectString = "SELECT * FROM students WHERE (userName=:userName)";
    $row=$result->fetch();
    $count=$result->rowCount();
    
-	if($count==0)
-		{
-	   
-			$result= 'Not a user';
-	   
-		}
-		elseif ( crypt($Password, $row['password']) === $row['password'] )
+
+		if ( crypt($Password, $row['password']) === $row['password'] )
 		{
 			if ($row['hasLoggedIn'] == 1)
 			{
+		$_SESSION['userName'] = $userName;
+			$_SESSION['pword'] = $Password;
+			$_SESSION['userName'] = $userName;
 				include 'checkpoint.html.php';
+				
 			}
 			else 
 			{
+				$_SESSION['userName'] = $userName;
+				$_SESSION['pword'] = $Password;
+
 				include 'passChangeController.php';
 			}
 		
@@ -74,14 +76,18 @@ $selectString = "SELECT * FROM students WHERE (userName=:userName)";
 	     print '<script type="text/javascript">'; 
        print 'alert("Sorry incorrect password")'; 
        print '</script>';  
-	   include 'checkpoint.html.php';
+	   $_POST = array();
+	
+	   include 'studentLoginController.php';
 		}
 		
 		
 }
 catch (PDOException $e)
 {
-	
+	 $error = 'Select statement error';
+    include 'error.html.php';
+    exit();
 }
 }
 
