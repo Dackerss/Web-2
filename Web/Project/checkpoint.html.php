@@ -46,7 +46,7 @@ echo "<form action = '$self' method='POST'>";
 
 
 
-<tr><th></th><td><input type='submit' name = 'confirm'  value='confirm'></td></tr>
+<tr><th></th><td><input type='submit' name = 'checkpoint'  value='confirm'></td></tr>
 </table>
 
 

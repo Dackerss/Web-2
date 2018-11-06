@@ -1,8 +1,7 @@
 <?php
-include 'Access.php';
+
+
 include 'connect.php';
-
-
 try
 {
     $pdo = new pdo("mysql:host=$host;dbname=$database", $userMS, $passwordMS);
@@ -18,10 +17,7 @@ catch (PDOException $e)
 
 try
 {
-  $selectString = "SELECT userName from students";
-    $resultUserName = $pdo->query($selectString);
 
-	
 }
 catch (PDOException $e)
 {
@@ -30,27 +26,16 @@ catch (PDOException $e)
     exit();
 }
 
-
-
-catch (PDOException $e)
-{
-	 $error = 'Select statement error';
-    include 'error.html.php';
-    exit();
-}
-
-
-
+			
 		
 
-   
-	
-	include 'studentPage.html.php';
 
-
-
+			
+    
+     include 'landing.html.php';
 	
 	
+
 
 			
 ?>
