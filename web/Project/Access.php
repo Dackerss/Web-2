@@ -41,11 +41,7 @@ if(!isset($userName))
 	$selectString = "SELECT userName from students";
     $resultUserName = $pdo->query($selectString);
  include'studentLogin.html.php';
-<<<<<<< HEAD
  
-=======
- print_r($_POST);
->>>>>>> ed45954b7530e4974bd5eb3a4f1ab3309e4e00ff
  exit();
 
 
@@ -78,12 +74,8 @@ if (isset($_POST['change']))
 		}
 		elseif ( crypt($oldPassword, $row['password']) === $row['password'] )
 		{
-<<<<<<< HEAD
 			$selectString = "SELECT userName from students";
     $resultUserName = $pdo->query($selectString);
-=======
-			
->>>>>>> ed45954b7530e4974bd5eb3a4f1ab3309e4e00ff
 		
 			$updateQuery ="UPDATE students SET password = :password WHERE students.userName like '$userName'"; 
 			$stmt =$pdo->prepare($updateQuery);
@@ -151,7 +143,6 @@ $selectString = "SELECT * FROM students WHERE (userName=:userName)";
    	
 		elseif ( crypt($Password, $row['password']) != $row['password'] )
 		{
-<<<<<<< HEAD
 			
 	   print '<script type="text/javascript">'; 
        print 'alert("Sorry incorrect password")'; 
@@ -160,15 +151,6 @@ $selectString = "SELECT * FROM students WHERE (userName=:userName)";
 	   include 'studentLogin.html.php';
 	   exit();
 		}
-=======
-			print_r($_POST);
-	   print '<script type="text/javascript">'; 
-       print 'alert("Sorry incorrect password")'; 
-       print '</script>';  
-	   $_POST = array();
-	   include 'studentloginController.php';
-	   exit();
->>>>>>> ed45954b7530e4974bd5eb3a4f1ab3309e4e00ff
 	   
 	   
 	

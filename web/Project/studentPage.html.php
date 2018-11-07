@@ -24,12 +24,41 @@ echo "<form action = '$self' method='POST'>";
 	
 	
 	
-<div class="w3-container w3-display-left">
+<div class="w3-container ">
+<table class="w3-table">
+<tr>
 	<?php
-echo ("<h3>$userName<h3>")
+	echo("<th>");
+echo ("<h3>$userName<h3>");
+echo("</th>");
+echo("<th>");
+echo ("<h3>$labName<h3>");
+echo("</th>");
+echo("<th>");
+echo ("<h3>Lab Complete $a<h3>");
+echo("</th>");
+
+echo("<th>");
+echo("<br>");
 ?>			 
 </div>
-			
+			<select name="dynamic_data">
+<?php
+
+ foreach($resultLab as $row ) {
+
+ echo "<option value=\"$row[labname]\"> $row[labname] </option>";
+
+}
+echo("</th>");
+echo("<th>");
+echo("<br>");
+echo("<input type='submit' name = 'apple'  value='change'>");
+echo("</th>");
+
+echo("</table>");
+?>
+</select>
 	
   <div class="w3-container w3-display-middle">
   		<div class="w3-table w3-centered  w3-light-grey">
@@ -48,9 +77,8 @@ echo ("<h3>$userName<h3>")
 </div>
   
 
-
-   <input type='submit' name = 'apple'  value='change'>
+	
    <input type="hidden" name="userName" id="hiddenField" value="<?php echo $userName;  ?>" />
-    <input type="hidden" name="pword" id="hiddenField" value="<?php echo $pword;  ?>" />
+    <input type="hidden" name="pword" id="hiddenField" value="<?php echo $Password;  ?>" />
  </body>
  </html>
