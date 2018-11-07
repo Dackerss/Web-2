@@ -16,13 +16,13 @@ echo "<form action = '$self' method='POST'>";
     </head>
 <table class="w3-table ">
 <?php
-echo ("<tr><th>$userName</th>")
+echo ("<tr><th>$userName</th>");
 ?>
 </tr>
 <tr><th>Old Password</th><td> <input type="password" placeholder="Password" name="oldpword"required ></td></tr>
 <tr><th>New Password</th><td> <input type="password" placeholder="Password" name="newpword"required ></td></tr>
 
 
-
-<tr><th></th><td><input type='submit' name = 'a'  value='a'></td></tr>
+<input type="hidden" name="userName" id="hiddenField" value="<?php echo $userName;  ?>" />
+<tr><th></th><td><input type='submit' name = 'change'  value='change'></td></tr>
 </table>

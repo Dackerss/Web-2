@@ -33,7 +33,7 @@ catch (PDOException $e)
 
 			
 		
-if (isset($_POST['confirm']))
+if (isset($_POST['checkpoint']))
 {
 
 	
