@@ -12,6 +12,35 @@
 $self = htmlentities($_SERVER['PHP_SELF']);
 echo "<form action = '$self' method='POST'>";
 ?> 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Response', 'You', 'Class'],
+          ['Hard/Easy', <?php echo $tool1xSelf?>, <?php echo $tool1xAve?>],
+          ['New/Familiar', <?php echo $tool2ySelf?>, <?php echo $tool1yAve?>],
+          ['Boring/Interesting', <?php echo $tool2xSelf?>, <?php echo $tool2xAve?>],
+          ['Frustrated/Triumphant', <?php echo $tool2ySelf?>, <?php echo $tool2yAve?>],
+		  ['Not improved/improved', <?php echo $tool3xSelf?>, <?php echo $tool3xAve?>],
+		  ['Didnt know where to start/Clear plan', <?php echo $tool3ySelf?>, <?php echo $tool3yAve?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
       <div class="w3-container w3-black">
             <!--Lab Checkpoint Tool-->
             <h1>You VS The World </h1>
@@ -20,7 +49,6 @@ echo "<form action = '$self' method='POST'>";
     <body>
 
 
-	
 	
 	
 	
@@ -60,20 +88,11 @@ echo("</table>");
 ?>
 </select>
 	
-  <div class="w3-container w3-display-middle">
-  		<div class="w3-table w3-centered  w3-light-grey">
-		<table>
-		<tr>
-		<th>Mark Checkpoint</th><th>Login</th><th>Admin Login </th>
-		</tr>
-		<tr>
-		<td><a href="checkpointContoller.php"><img src="checkpoint.png" class="w3-bar-item w3-button" ></a></td><td><a href="studentLoginController.php"><img src="student.png" class="w3-bar-item w3-button"></a></td><td><a href="adminContoller.php"><img src="admin.png" class="w3-bar-item w3-button" ></a></td>
-		</tr>
-		</table>
-	
-			
 
-</div>
+	
+			<div id="barchart_material" style="width: 900px; height: 500px;"></div>
+
+
 </div>
   
 
