@@ -120,12 +120,13 @@ try {
         (
             completionID int(10) 		NOT NULL AUTO_INCREMENT,
             studentID    int(11)        NOT NULL,
-			labID        int(10)        NOT NULL,
+			labID        int(10)        NOT NULL, 
             responseTime DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		
 			
 			
             PRIMARY KEY(completionID),
+			FOREIGN KEY(labID) REFERENCES lab(labID),
 			FOREIGN KEY(studentID) REFERENCES students(studentID)
 			
         )";
@@ -338,7 +339,7 @@ try
 			$studentID=$myArray[1];
 			$labID=$myArray[2];
 			$xValue=$myArray[3];
-			$yValue=$studentNumber;
+			$yValue=$myArray[4];
 			$stmt->execute();
 		}
 		

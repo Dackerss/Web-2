@@ -1,5 +1,5 @@
 <?php
-
+include 'checkpointaccess'; 
 
 include 'connect.php';
 try
