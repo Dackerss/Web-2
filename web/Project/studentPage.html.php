@@ -21,7 +21,7 @@ echo "<form action = '$self' method='POST'>";
         var data = google.visualization.arrayToDataTable([
           ['Response', 'You', 'Class'],
           ['Hard/Easy', <?php echo $tool1xSelf?>, <?php echo $tool1xAve?>],
-          ['New/Familiar', <?php echo $tool2ySelf?>, <?php echo $tool1yAve?>],
+          ['New/Familiar', <?php echo $tool1ySelf?>, <?php echo $tool1yAve?>],
           ['Boring/Interesting', <?php echo $tool2xSelf?>, <?php echo $tool2xAve?>],
           ['Frustrated/Triumphant', <?php echo $tool2ySelf?>, <?php echo $tool2yAve?>],
 		  ['Not improved/improved', <?php echo $tool3xSelf?>, <?php echo $tool3xAve?>],

@@ -15,9 +15,11 @@ catch (PDOException $e)
   exit();
 }
 
+
 if (isset($_POST['userName']))
 {
 	$userName = strip_tags($_POST['userName']);
+	
 }
 
 else if (isset($_SESSION['userName']))
@@ -29,6 +31,7 @@ else if (isset($_SESSION['userName']))
 if (isset($_POST['pword']))
 {
 	$Password = strip_tags($_POST['pword']);
+	
 }
 
 else if (isset($_SESSION['pword']))

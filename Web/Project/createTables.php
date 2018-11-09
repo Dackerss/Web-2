@@ -145,8 +145,8 @@ try {
 			toolID 		 int(11)	    NOT NULL,
             studentID    int(32)        NOT NULL,
 			labID        int(10)        NOT NULL,
-            xValue       VARCHAR(32) 	DEFAULT NULL,
-			yValue       VARCHAR(32)	DEFAULT NULL,
+            xValue       int(32) 	DEFAULT NULL,
+			yValue       int(32)	DEFAULT NULL,
 		
 			
 			

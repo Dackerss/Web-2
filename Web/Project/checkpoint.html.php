@@ -17,7 +17,7 @@ echo "<form action = '$self' method='POST'>";
 <table class="w3-table ">
 
 <tr><th>Student:</th>
-<td><select name="dynamic_data">
+<td><select name="userName">
 <?php
 
  foreach($resultUserName as $row ) {
@@ -30,7 +30,7 @@ echo "<form action = '$self' method='POST'>";
 </td>
 </tr>
 <tr><th>Lab</th>
-<td><select name="dynamic_data">
+<td><select name="labname">
 <?php
 
  foreach($resultLab as $row ) {
