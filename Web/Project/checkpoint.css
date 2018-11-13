@@ -46,6 +46,7 @@
 	width: 75%;
 	background-color:white;
     padding-top:100px;
+	
 }
 
 body
@@ -56,7 +57,8 @@ body
 
 .apple
 {
-	background-color:#989898
+	background-color:#989898;
+	position: relative;
 }
 .header
 {
@@ -120,6 +122,13 @@ text-align: center
 	width: 50%
 }
 
+.button
+{
+	
+right: 0;
+bottom: 0;
+position: absolute;
+}
 
 
  

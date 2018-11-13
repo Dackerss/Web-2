@@ -68,6 +68,7 @@ echo "<form action = '$self' method='POST'>";
 
 <div class= "first">
 		<h2>Filter lab</h2> 	<select name="dynamic_data">
+
 <?php
 
  foreach($resultLab as $row ) {
@@ -104,10 +105,11 @@ echo("<input type='submit' name = 'apple'  value='change'>");
 
 	
 
-	
 			
+	<input class="button" type='submit' name = 'logout'  value='Logout'>
 
 </div>
+
 </div>
 
   

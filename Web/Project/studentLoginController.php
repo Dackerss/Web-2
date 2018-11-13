@@ -17,8 +17,7 @@ catch (PDOException $e)
   exit();
 }
 
-try
-{
+
   $selectString = "SELECT userName from students";
     $resultUserName = $pdo->query($selectString);
 
@@ -27,10 +26,12 @@ try
 	
 	$selectString = "SELECT studentID from students where userName = '$userName'";
 	$resultid = $pdo->query($selectString);
-	$labName = "meh";
+	
+	$labName = "Lab 2";
+	
 	$a="meh";
 	
-	if(isset($_POST['apple']))
+	
 	{
 		$tool1X = 0;
 		$tool1Y = 0;
@@ -43,7 +44,13 @@ try
 		$tool3Total = 0;
 		$selectString = "SELECT studentID from students where userName = '$userName'";
 		$resultid = $pdo->query($selectString);
+		if(isset($_POST['dynamic_data']))
+		{
 		$labName = $_POST['dynamic_data'];
+		}
+		else{
+			$labName = "Lab 2";
+		}
 		
 		$selectString = "SELECT * from data JOIN lab on data.labID = lab.labID Where lab.labName = '$labName'";
 		$toolData = $pdo->prepare($selectString);
@@ -256,17 +263,17 @@ try
 					
 				}
 				
-				$checkred = ($classPercent-25);
-				$checkYellow = ($classPercent-15);
+				$checkred = ($classPercent-20);
+				$checkYellow = ($classPercent-10);
 				
 				if ($checkred > $userPercent)
 				{
 					$winner = "red";
 				}
 				
-				 if ($checkYellow > $userPercent)
+				else if ($checkred < $userPercent && $checkYellow > $userPercent)
 				{
-					$winner = "yelow";
+					$winner = "yellow";
 				}
 				
 				else
@@ -275,31 +282,24 @@ try
 					
 				}
 				
+				
+			
 			
 				
-}
-}
-catch (PDOException $e)
-{
-    $error = 'Select statement error';
-    include 'error.html.php';
-    exit();
-}
 
 
 
-catch (PDOException $e)
-{
-	 $error = 'Select statement error';
-    include 'error.html.php';
-    exit();
-}
+	}
 
 
-
+	if(isset($_POST['logout']))
+	{
+		include'landing.html.php';
+	exit();	
+	}
 		
 
-   
+ 
 	
 	include 'studentPage.html.php';
 
