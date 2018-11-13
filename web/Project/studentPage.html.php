@@ -7,7 +7,7 @@
     <title>Home</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
-   <link rel="stylesheet" type="text/css" href="StyleSheet.css">  
+   <link rel="stylesheet" type="text/css" href="checkpoint.css">  
       <?php
 $self = htmlentities($_SERVER['PHP_SELF']);
 echo "<form action = '$self' method='POST'>";
@@ -52,25 +52,22 @@ echo "<form action = '$self' method='POST'>";
 	
 	
 	
-<div class="w3-container ">
-<table class="w3-table">
-<tr>
-	<?php
-	echo("<th>");
-echo ("<h3>$userName<h3>");
-echo("</th>");
-echo("<th>");
-echo ("<h3>$labName<h3>");
-echo("</th>");
-echo("<th>");
-echo ("<h3>Lab Complete $a<h3>");
-echo("</th>");
 
-echo("<th>");
-echo("<br>");
-?>			 
-</div>
-			<select name="dynamic_data">
+
+
+
+
+
+<div class= "container">
+<div class="w3-container apple">
+<div class= "first"><h2><?php echo $userName ?> </h2><hr></hr></div><div class="third"><div id="barchart_material" class="right" style="width: 890px; height: 515px;"></div></div>
+<div class= "first" ><h2><?php echo $labName ?></h2><hr></hr></div>
+<div class= "first" style="color:<?php echo $colour ?>"><h2><?php echo ("Lab Complete:  $a") ?></h2><hr></hr></div>
+
+
+
+<div class= "first">
+		<h2>Filter lab</h2> 	<select name="dynamic_data">
 <?php
 
  foreach($resultLab as $row ) {
@@ -78,22 +75,41 @@ echo("<br>");
  echo "<option value=\"$row[labname]\"> $row[labname] </option>";
 
 }
-echo("</th>");
-echo("<th>");
-echo("<br>");
+
 echo("<input type='submit' name = 'apple'  value='change'>");
-echo("</th>");
 
-echo("</table>");
-?>
-</select>
+
+?><hr></hr></div>
+
+
+<div class= "first" >
+
+				<div class = "left" style = "color:<?php echo $winner ?>">
+				<?php echo ("<h3>You:</h3> ");
+				echo ("<h3>");echo round($userPercent);echo("%");echo ("</h3>");
+				?>
+				</div>
+				
+				
+				<div class ="right">
+				<?php
+				echo ("<h3>Class:</h3>");
+				echo ("<h3>"); echo round($classPercent);echo("%"); echo ("</h3>");
+				?>
+				</div>
+				
+				</div>
+				
+
+
 	
 
 	
-			<div id="barchart_material" style="width: 900px; height: 500px;"></div>
-
+			
 
 </div>
+</div>
+
   
 
 	

@@ -245,10 +245,38 @@ try
 				$classPercent = (($classAverageCompletion / $labTotal)*100);
 				$userPercent = (($userTotal / $labTotal)*100);
 				
-				echo ("ez");
-				echo $classPercent;
-				echo ("ez");
-				echo $userPercent;
+				if ($a == "no")
+				{
+					
+					$colour = "red";
+				}
+				else
+				{
+					$colour = "green";
+					
+				}
+				
+				$checkred = ($classPercent-25);
+				$checkYellow = ($classPercent-15);
+				
+				if ($checkred > $userPercent)
+				{
+					$winner = "red";
+				}
+				
+				 if ($checkYellow > $userPercent)
+				{
+					$winner = "yelow";
+				}
+				
+				else
+				{
+					$winner = "green";
+					
+				}
+				
+			
+				
 }
 }
 catch (PDOException $e)

@@ -36,3 +36,90 @@
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
+
+.container
+{
+    height: 100%; 
+    min-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	background-color:white;
+    padding-top:100px;
+}
+
+body
+{
+	background-color:##989898;
+	color: white;
+}
+
+.apple
+{
+	background-color:#989898
+}
+.header
+{
+	width: 100%;
+	height: 15%;
+	
+	
+}
+
+H1 { 
+
+text-align: center 
+
+
+}
+
+.first {
+    float: left;
+    width: 20%;
+    height: 10%;
+	margin-top: 20px;
+    
+	
+}
+
+.second{
+    float: left;
+    width: 20%;
+    height: 25%;
+	
+   
+}
+
+
+.third{
+    float: right;
+    width: 900px;
+    height: 525px;
+    margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 50px;
+	   border-style: solid;
+    border-width: 5px;
+}
+
+.fourth {
+    float: left;
+    width: 20%;
+    height: 20%;
+   
+}
+
+.right {
+	float: right;
+	width: 50%;
+	color: green;
+}
+
+.left {
+	float: left;
+	width: 50%
+}
+
+
+
+ 
