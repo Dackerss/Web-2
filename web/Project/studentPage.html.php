@@ -43,7 +43,7 @@ echo "<form action = '$self' method='POST'>";
     </script>
       <div class="w3-container w3-black">
             <!--Lab Checkpoint Tool-->
-            <h1>You VS The World </h1>
+            <h1><?php echo $userName ?> VS The World </h1>
         </div>
     </head>
     <body>

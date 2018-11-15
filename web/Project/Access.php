@@ -68,7 +68,7 @@ if (isset($_POST['change']))
 	if($count==0)
 		{
 	   
-			$result= 'Not a user';
+			$result = 'Not a user';
 			echo ("apple");
 			echo $oldPassword;
 			print_r($_POST);
@@ -79,6 +79,17 @@ if (isset($_POST['change']))
 		{
 			$selectString = "SELECT userName from students";
     $resultUserName = $pdo->query($selectString);
+			$matchLength = "/^[a-zA-z0-9]{10,70}$/";
+			if(!preg_match($matchLength, $newPassword))
+		{
+					 print '<script type="text/javascript">'; 
+       print 'alert("Sorry new password needs to be atleast 10 characters long")'; 
+       print '</script>';  
+			$_POST = array_pop($_POST);
+			include 'passChange.html.php';
+			exit();
+
+		}
 		
 			$updateQuery ="UPDATE students SET password = :password WHERE students.userName like '$userName'"; 
 			$stmt =$pdo->prepare($updateQuery);
@@ -98,7 +109,18 @@ if (isset($_POST['change']))
 			$stmt->execute();
 			include 'studentLogin.html.php';
 			exit();
-		
+			
+	
+			
+		}
+		else 
+		{
+			 print '<script type="text/javascript">'; 
+       print 'alert("Sorry old password did not match")'; 
+       print '</script>';  
+			$_POST = array_pop($_POST);
+			include 'passChange.html.php';
+			exit();
 			
 		}
 }
@@ -150,7 +172,7 @@ $selectString = "SELECT * FROM students WHERE (userName=:userName)";
 	   print '<script type="text/javascript">'; 
        print 'alert("Sorry incorrect password")'; 
        print '</script>';  
-	   print_r($_POST);
+	
 	   include 'studentLogin.html.php';
 	   exit();
 		}

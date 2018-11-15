@@ -19,9 +19,9 @@ echo "<form action = '$self' method='POST'>";
 <table class="w3-table pad ">
 
 <tr><th>Student:</th>
-<td><select name="userName">
+<td><select name="student">
 <?php
-
+	
  foreach($resultUserName as $row ) {
 
  echo "<option value=\"$row[userName]\"> $row[userName] </option>";
@@ -29,14 +29,16 @@ echo "<form action = '$self' method='POST'>";
 }
 ?>
 </select>
+
 </td>
 </tr>
 
-<tr><th>Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
 
 
 
-<tr><th></th><td><input type='submit' name = 'confirm'  value='confirm'></td></tr>
+<input type="hidden" name="userName" id="hiddenField" value="<?php echo $adminUser;  ?>" />
+<input type="hidden" name="pword" id="hiddenField" value="<?php echo $adminPassword;  ?>" />
+<tr><th></th><td><input type='submit'onclick="return confirm('Are you sure you want to reset this password password?')" name = 'reset'  value='Reset'></td></tr>
 </table>
 </div>
 

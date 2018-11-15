@@ -21,54 +21,75 @@ echo "<form action = '$self' method='POST'>";
 
 
 				
-				 
+	<div class="containerSlider">		
+	
+	<P> Please give honest feed back</P>
+	<P> If you dont feel like answering any questions leave the value at 0 </P>
+	<P> Values are saved in pairs and as such not answering one will void the answer for the other </P>
+	<hr>
+<div class = "set1">
+<div class=" slidecontainer1">	
 	<h3> Easy/Hard </h3>
 <div class=" slidecontainer">
 
   <input type="range" name="easy/hard" min="-10" max="10" value="0" class="slider" id="a">
   <span id="1"></span>
 </div>
-
+</div>
+<div class=" slidecontainer2">
 <h3> Boring/Interesting </h3>
 <div class="slidecontainer">
 
   <input type="range" name="boring/interesting" min="-10" max="10" value="0" class="slider" id="b">
   <span name="apple" id="2"></span>
 </div>
-
+</div>
+</div>
+<hr>
+<div class = "set2">
+<div class=" slidecontainer4">
 <h3> Content was all new/Content was familiar </h3>
 <div class="slidecontainer">
 
   <input type="range" name="new/familiar" min="-10" max="10" value="0" class="slider" id="c">
   <span id="3"></span>
 </div>
-
+</div>
+<div class=" slidecontainer3">
 <h3> Didnt know how to approach the problem/Had a Clear plan </h3>
 <div class="slidecontainer">
 
-  <input type="range" name="problem/clear" min="-10" max="10" value="0" class="slider" id="d">
-  <span id="4"></span>
+  <input type="range"  name="problem/clear" min="-10" max="10" value="0" class="slider" id="d">
+  <span  id="4"></span>
 </div>
-
+</div>
+</div>
+<hr>
+<div class = "set3">
+<div class=" slidecontainer5">
 <h3> My skills have not improved/My skills have improved </h3>
 <div class="slidecontainer">
 
   <input type="range" name="notImproved/improved" min="-10" max="10" value="0" class="slider" id="e">
   <span id="5"></span>
 </div>
-
+</div>
+<div class=" slidecontainer6">
 <h3> I feel frustrated/I feel triumphant </h3>
 <div class="slidecontainer">
 
   <input type="range" name="frustrated/triumphant" min="-10" max="10" value="0" class="slider" id="f">
   <span id="6"></span>
 </div>
-	
+	</div>
+	</div>
+	<div class ="buttonholder">
 <input type='submit' name = 'submit'  value='confirm'>
+</div>
 			
 </div>
-</div>
-  
+
+  </div>
 
 
    

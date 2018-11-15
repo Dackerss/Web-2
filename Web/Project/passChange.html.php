@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
    <link rel="stylesheet" type="text/css" href="StyleSheet.css">  
+   <link rel="stylesheet" type="text/css" href="checkpoint.css">   
       <?php
 $self = htmlentities($_SERVER['PHP_SELF']);
 echo "<form action = '$self' method='POST'>";
@@ -14,6 +15,7 @@ echo "<form action = '$self' method='POST'>";
             <h1>Checkpoint tool</h1>
         </div>
     </head>
+	 <div class ="containerLogin">
 <table class="w3-table ">
 <?php
 echo ("<tr><th>$userName</th>");
@@ -26,3 +28,4 @@ echo ("<tr><th>$userName</th>");
 <input type="hidden" name="userName" id="hiddenField" value="<?php echo $userName;  ?>" />
 <tr><th></th><td><input type='submit' name = 'change'  value='change'></td></tr>
 </table>
+</div>

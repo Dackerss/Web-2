@@ -168,8 +168,14 @@ $labName = $_POST['labname'];
 			print '<script type="text/javascript">'; 
        print 'alert("Incorrect Password")'; 
        print '</script>'; 
-		 include 'landing.html.php';
-			exit();
+	  	$selectString = "SELECT userName from students";
+    $resultUserName = $pdo->query($selectString);
+	
+	$selectString = "SELECT labname,isCheckpoint from lab Where isCheckpoint = 1 ";
+    $resultLab = $pdo->query($selectString);
+ include'checkpoint.html.php';
+ 
+ exit();
 		}
    }
 	

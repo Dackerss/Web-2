@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
    <link rel="stylesheet" type="text/css" href="StyleSheet.css">  
-   <link rel="stylesheet" type="text/css" href="checkpoint.css">
+   <link rel="stylesheet" type="text/css" href="checkpoint.css">   
       <?php
 $self = htmlentities($_SERVER['PHP_SELF']);
 echo "<form action = '$self' method='POST'>";
@@ -16,29 +16,12 @@ echo "<form action = '$self' method='POST'>";
         </div>
     </head>
 	 <div class ="containerLogin">
-<table class="w3-table pad ">
+<table class="w3-table ">
 
-<tr><th>Student:</th>
-<td><select name="userName">
-<?php
-
- foreach($resultUserName as $row ) {
-
- echo "<option value=\"$row[userName]\"> $row[userName] </option>";
-
-}
-?>
-</select>
-</td>
 </tr>
+<tr><th>Admin Name</th><td> <input type="password" placeholder="Admin" name="userName"required ></td></tr>
+<tr><th>Admin Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
 
-<tr><th>Password</th><td> <input type="password" placeholder="Password" name="pword"required ></td></tr>
-
-
-
-<tr><th></th><td><input type='submit' name = 'confirm'  value='confirm'></td></tr>
+<tr><th></th><td><input type='submit' name = 'change'  value='Login'></td></tr>
 </table>
 </div>
-
-
-
